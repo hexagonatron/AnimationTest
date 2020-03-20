@@ -45,5 +45,5 @@ const removeNode = (node, position) => {
     node.classList.add(`animate-${position}`);
     setTimeout(() => {
         node.parentNode.removeChild(node);
-    }, 2000);
+    }, 400);
 }
