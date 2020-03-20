@@ -7,15 +7,13 @@ let squareEl = document.querySelector(".square")
 let squareEl1;
 
 nextBtn.addEventListener("click", (e) => {
-    squareEl.classList.add("animate-left");
-    squareEl1 = createSquare("right");
-    setTimeout(removeCurrent, 2000);
+    removeNode(squareEl, "left");
+    squareEl = createSquare("right");
     
 })
 prevBtn.addEventListener("click", (e) => {
-    squareEl.classList.add("animate-right");
-    squareEl1 = createSquare("left");
-    setTimeout(removeCurrent, 2000);
+    removeNode(squareEl, "right");
+    squareEl = createSquare("left");
 })
 
 const createSquare = (position) => {
@@ -29,21 +27,23 @@ const createSquare = (position) => {
         animationContainer.appendChild(newSquare);
         setTimeout(() => {
             newSquare.classList.remove("animate-left");
-        },20);
+        },10);
     } else if(position === "right"){
         console.log("Test");
         newSquare.classList.add("animate-right");
         animationContainer.appendChild(newSquare);
         setTimeout(() => {
             newSquare.classList.remove("animate-right");
-        },20);
+        },10);
     }
 
     return newSquare;
 
 }
 
-const removeCurrent = () => {
-    squareEl.parentNode.removeChild(squareEl);
-    squareEl = squareEl1;
+const removeNode = (node, position) => {
+    node.classList.add(`animate-${position}`);
+    setTimeout(() => {
+        node.parentNode.removeChild(node);
+    }, 2000);
 }
