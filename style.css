@@ -1,0 +1,30 @@
+body{
+    min-height: 100vw;
+}
+
+.container {
+    height: 100%;
+}
+
+.animation-container {
+    border: 1px solid black;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.square {
+    height: 100px;
+    width:  100px;
+    background-color: red;
+    position: absolute;
+    transition: transform 2s;
+}
+
+.animate-right {
+    transform: translate(50vw);
+}
+.animate-left {
+    
+    transform: translate(-50vw);
+}
