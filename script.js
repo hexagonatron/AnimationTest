@@ -27,14 +27,14 @@ const createSquare = (position) => {
         animationContainer.appendChild(newSquare);
         setTimeout(() => {
             newSquare.classList.remove("animate-left");
-        },10);
+        },20);
     } else if(position === "right"){
         console.log("Test");
         newSquare.classList.add("animate-right");
         animationContainer.appendChild(newSquare);
         setTimeout(() => {
             newSquare.classList.remove("animate-right");
-        },10);
+        },20);
     }
 
     return newSquare;
